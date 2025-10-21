@@ -20,7 +20,7 @@ Curses.instance_eval do
   attroff(RED_ON_BLACK)
 
   attron(BLACK_ON_YELLOW)
-  printw("Black on yello\n")
+  printw("Black on yellow\n")
   attroff(BLACK_ON_YELLOW)
 
   attron(BLUE_ON_WHITE)

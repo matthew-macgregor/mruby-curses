@@ -11483,6 +11483,8 @@ mrb_Curses_TABSIZE(mrb_state* mrb, mrb_value self) {
   return mrb_fixnum_value(TABSIZE);
 }
 
+#define COLOR_PAIR_REQUIRED_ARGC 1
+#define COLOR_PAIR_OPTIONAL_ARGC 0
 mrb_value
 mrb_Curses_COLOR_PAIR(mrb_state* mrb, mrb_value self) {
   mrb_int num;
@@ -11622,7 +11624,7 @@ mrb_define_class_method(mrb, Curses_module, "COLS", mrb_Curses_COLS, MRB_ARGS_AR
 mrb_define_class_method(mrb, Curses_module, "COLORS", mrb_Curses_COLORS, MRB_ARGS_ARG(0, 0));
 mrb_define_class_method(mrb, Curses_module, "COLOR_PAIRS", mrb_Curses_COLOR_PAIRS, MRB_ARGS_ARG(0, 0));
 mrb_define_class_method(mrb, Curses_module, "TABSIZE", mrb_Curses_TABSIZE, MRB_ARGS_ARG(0, 0));
-mrb_define_class_method(mrb, Curses_module, "COLOR_PAIR", mrb_Curses_COLOR_PAIR, MRB_ARGS_ARG(0, 0));
+mrb_define_class_method(mrb, Curses_module, "COLOR_PAIR", mrb_Curses_COLOR_PAIR, MRB_ARGS_ARG(COLOR_PAIR_REQUIRED_ARGC, COLOR_PAIR_OPTIONAL_ARGC));
 
 #if BIND_addch_FUNCTION
   mrb_define_class_method(mrb, Curses_module, "addch", mrb_Curses_addch, MRB_ARGS_ARG(addch_REQUIRED_ARGC, addch_OPTIONAL_ARGC));
